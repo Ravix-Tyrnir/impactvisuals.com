@@ -3,49 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impact Visuals | Визуальный лаунчер нового поколения</title>
+    <title>Impact Visuals | Профессиональный лаунчер</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: #fff; margin: 0; line-height: 1.6; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        header { text-align: center; padding: 50px 0; }
-        h1 { color: #00d4ff; margin-bottom: 10px; }
-        .card { background: #1a1a1a; padding: 25px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #333; }
+        /* Стилизация */
+        :root { --accent: #8a2be2; --bg: #050505; --card: rgba(255, 255, 255, 0.05); }
+        body { margin: 0; background-color: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
         
-        /* Блок безопасности (то, что уберет "вирусность") */
-        .security-box { border-left: 4px solid #00d4ff; background: #152026; padding: 20px; margin-top: 30px; }
-        .security-box h2 { color: #00d4ff; margin-top: 0; }
+        header { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at center, #2e1a47 0%, #050505 70%); text-align: center; }
         
-        .btn { display: inline-block; padding: 12px 25px; background: #00d4ff; color: #000; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; }
+        h1 { font-size: 5rem; margin: 0; text-shadow: 0 0 30px var(--accent); }
+        .cta-button { padding: 20px 50px; background: var(--accent); border: none; border-radius: 30px; color: white; font-size: 1.2rem; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        .cta-button:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--accent); }
+
+        .section-title { text-align: center; font-size: 3rem; margin: 80px 0; color: var(--accent); }
+        
+        /* Сетка карточек */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 50px; }
+        .glass { background: var(--card); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 30px; transition: 0.4s; }
+        .glass:hover { transform: translateY(-10px); border-color: var(--accent); }
+
+        /* Тарифы */
+        .pricing { display: flex; justify-content: center; gap: 30px; padding: 50px; flex-wrap: wrap; }
+        .price-card { background: #111; padding: 40px; border-radius: 20px; text-align: center; border: 2px solid #333; width: 300px; }
+        
+        /* Блок безопасности */
+        .security-section { padding: 50px; background: #0a0a0a; border: 1px solid #222; margin: 50px; border-radius: 20px; }
+        .security-section h2 { color: #00d4ff; }
+        .security-list { color: #ccc; }
+
+        footer { padding: 50px; text-align: center; border-top: 1px solid #222; }
+        .tg-link { color: var(--accent); text-decoration: none; font-size: 1.5rem; }
     </style>
 </head>
 <body>
 
-<div class="container">
     <header>
-        <h1>Impact Visuals</h1>
-        <p>Визуальный лаунчер нового поколения для Minecraft</p>
+        <h1>IMPACT VISUALS</h1>
+        <p>Будущее твоей игры начинается здесь.</p>
+        <button class="cta-button" onclick="alert('Лаунчер пока в разработке. Заходите в TG!')">Скачать ALPHA 0.1</button>
     </header>
 
-    <div class="card">
-        <h2>О проекте</h2>
-        <p>Impact Visuals — это оптимизированное решение для комфортной игры. Мы предлагаем уникальные пресеты для слабых и мощных ПК, а также расширенные настройки для PvP и PvE.</p>
+    <h2 class="section-title">Почему мы?</h2>
+    <div class="grid">
+        <div class="glass">
+            <h3>Удобство</h3>
+            <p>Наш лаунчер — самый интуитивный на рынке. Мы убрали всё лишнее, оставив только комфорт для игрока.</p>
+        </div>
+        <div class="glass">
+            <h3>Оптимизация</h3>
+            <p>Уникальные пресеты под каждое железо. Мы выжмем каждый FPS, который может дать ваша система.</p>
+        </div>
+        <div class="glass">
+            <h3>PvP & PvE Помощь</h3>
+            <p>Встроенный функционал для получения игрового преимущества. Стань лучшим с Impact Visuals.</p>
+        </div>
     </div>
 
-    <div class="security-box">
-        <h2>Безопасность и прозрачность</h2>
-        <p>Проект разработан ютубером <strong>Ravix</strong> (<a href="https://youtube.com/@ravixfd" target="_blank">перейти на канал</a>). Мы гарантируем:</p>
-        <ul>
-            <li>Лаунчер взаимодействует только с игровыми файлами Minecraft.</li>
-            <li>Никакого вредоносного ПО или сбора личных данных.</li>
-            <li><strong>Почему антивирус может ругаться?</strong> Лаунчер является новым проектом без платной цифровой подписи (Certificate). Это стандартное предупреждение Windows для всех независимых инди-программ.</li>
+    <h2 class="section-title">Наши тарифы</h2>
+    <div class="pricing">
+        <div class="price-card"><h3>FREE</h3><p>0 ₽</p></div>
+        <div class="price-card"><h3>MEDIUM</h3><p>50 ₽</p></div>
+        <div class="price-card"><h3>MAXIMUM</h3><p>150 ₽</p></div>
+    </div>
+
+    <!-- Блок безопасности -->
+    <section class="security-section">
+        <h2>Безопасность проекта</h2>
+        <p>Проект разработан ютубером <strong>Ravix</strong> (<a href="https://youtube.com/@ravixfd" style="color:#00d4ff;">перейти на канал</a>). Мы дорожим своей репутацией:</p>
+        <ul class="security-list">
+            <li><strong>Прозрачность:</strong> Лаунчер работает исключительно с файлами Minecraft и не содержит вредоносного ПО.</li>
+            <li><strong>Почему антивирус ругается?</strong> Impact Visuals — новый проект без платной цифровой подписи (Certificate). Это стандартное поведение Windows для любого независимого ПО, пока оно не станет массовым.</li>
+            <li><strong>Мы за честную игру:</strong> Наш проект направлен на оптимизацию и удобство, а не на порчу игрового процесса.</li>
         </ul>
-        <p><em>Мы делаем лаунчер с душой и заботой о каждом игроке.</em></p>
-    </div>
+    </section>
 
-    <footer style="text-align: center; margin-top: 50px; font-size: 0.8em; color: #666;">
-        © 2026 Impact Visuals. Разработка: Ravix.
+    <footer>
+        <p>Impact Visuals © 2026. Проект в активной разработке.</p>
+        <p>Следите за обновлениями:</p>
+        <a href="https://t.me/ImpactVisualss" class="tg-link">Наш Telegram-канал</a>
     </footer>
-</div>
 
 </body>
 </html>

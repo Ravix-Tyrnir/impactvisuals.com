@@ -58,6 +58,14 @@
         document.querySelectorAll('.content-section').forEach((s, i) => s.classList.toggle('active', i === index));
         document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === index));
     }
+    .logo-img { 
+    width: 45px; 
+    margin-right: 20px; 
+    /* Этот фильтр поможет убрать зеленый фон, если он чистого цвета */
+    mix-blend-mode: multiply; 
+    filter: drop-shadow(0 0 5px #bd00ff); 
+}
+    
 </script>
 </body>
 </html>

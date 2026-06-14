@@ -7,14 +7,12 @@
     <style>
         body { margin: 0; background-color: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; }
         
-        /* Навигация */
         .navbar { display: flex; align-items: center; padding: 20px 50px; background: #000; border-bottom: 2px solid #bd00ff; }
-        .logo { width: 45px; margin-right: 20px; filter: drop-shadow(0 0 5px #bd00ff); }
+        .logo-img { width: 45px; margin-right: 20px; filter: drop-shadow(0 0 5px #bd00ff); }
         .tabs { display: flex; gap: 30px; margin-left: auto; }
         .tab-btn { background: none; border: none; color: #aaa; cursor: pointer; padding: 10px; transition: 0.3s; font-size: 1.1rem; }
         .tab-btn:hover, .tab-btn.active { color: #bd00ff; border-bottom: 2px solid #bd00ff; text-shadow: 0 0 10px #bd00ff; }
 
-        /* Контент */
         .content-section { padding: 50px; display: none; text-align: center; }
         .content-section.active { display: block; animation: fadeIn 0.6s ease; }
         
@@ -28,8 +26,7 @@
 <body>
 
 <nav class="navbar">
-    <!-- Логотип -->
-    <img src="1000014561_2.png" class="logo" alt="IV">
+    <img src="Logo.png" class="logo-img" alt="IV">
     <div class="tabs">
         <button class="tab-btn active" onclick="showTab(0)">Описание</button>
         <button class="tab-btn" onclick="showTab(1)">Функции</button>
@@ -50,10 +47,9 @@
 <div id="tab2" class="content-section">
     <h1>Галерея</h1>
     <div class="gallery">
-        <!-- Скриншоты -->
-        <img src="1000014562_2.png" class="screenshot" alt="Главное меню">
-        <img src="1000014563_2.png" class="screenshot" alt="Менеджер модов">
-        <img src="1000014564_2.png" class="screenshot" alt="Настройки">
+        <img src="Main.png" class="screenshot" alt="Главное меню">
+        <img src="Mods.png" class="screenshot" alt="Менеджер модов">
+        <img src="Setting.png" class="screenshot" alt="Настройки">
     </div>
 </div>
 

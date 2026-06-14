@@ -2,53 +2,83 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Visuals | Профессиональный лаунчер</title>
     <style>
-        body {
-            margin: 0;
-            background-color: #0a0a0a; /* Глубокий черный */
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            overflow-x: hidden;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle at center, #2e1a47 0%, #0a0a0a 70%);
-            text-align: center;
-        }
-        .logo-title {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px #8a2be2; /* Фиолетовое свечение */
-        }
-        .cta-button {
-            padding: 15px 40px;
-            background: transparent;
-            border: 2px solid #8a2be2;
-            color: white;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-        .cta-button:hover {
-            background: #8a2be2;
-            box-shadow: 0 0 30px #8a2be2;
-        }
-        /* Анимация плавного появления */
-        .fade-in { animation: fadeIn 1.5s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Стилизация */
+        :root { --accent: #8a2be2; --bg: #050505; --card: rgba(255, 255, 255, 0.05); }
+        body { margin: 0; background-color: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+        
+        header { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at center, #2e1a47 0%, #050505 70%); text-align: center; }
+        
+        h1 { font-size: 5rem; margin: 0; text-shadow: 0 0 30px var(--accent); }
+        .cta-button { padding: 20px 50px; background: var(--accent); border: none; border-radius: 30px; color: white; font-size: 1.2rem; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        .cta-button:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--accent); }
+
+        .section-title { text-align: center; font-size: 3rem; margin: 80px 0; color: var(--accent); }
+        
+        /* Сетка карточек */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 50px; }
+        .glass { background: var(--card); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 30px; transition: 0.4s; }
+        .glass:hover { transform: translateY(-10px); border-color: var(--accent); }
+
+        /* Тарифы */
+        .pricing { display: flex; justify-content: center; gap: 30px; padding: 50px; }
+        .price-card { background: #111; padding: 40px; border-radius: 20px; text-align: center; border: 2px solid #333; width: 300px; }
+        
+        /* Галерея */
+        .gallery { padding: 100px 50px; text-align: center; }
+        .img-placeholder { width: 100%; height: 400px; background: #222; border-radius: 20px; display: flex; align-items: center; justify-content: center; border: 2px dashed #444; }
+
+        footer { padding: 50px; text-align: center; border-top: 1px solid #222; }
+        .tg-link { color: var(--accent); text-decoration: none; font-size: 1.5rem; }
     </style>
 </head>
 <body>
-    <section class="hero fade-in">
-        <h1 class="logo-title">IMPACT VISUALS</h1>
-        <p>Максимальная оптимизация. Твой стиль в каждом кадре.</p>
-        <button class="cta-button">Скачать Launcher</button>
+
+    <header>
+        <h1>IMPACT VISUALS</h1>
+        <p>Будущее твоей игры начинается здесь.</p>
+        <button class="cta-button" onclick="alert('Лаунчер пока в разработке. Заходите в TG!')">Скачать ALPHA 0.1</button>
+    </header>
+
+    <h2 class="section-title">Почему мы?</h2>
+    <div class="grid">
+        <div class="glass">
+            <h3>Удобство</h3>
+            <p>Наш лаунчер — самый интуитивный на рынке. Мы убрали всё лишнее, оставив только комфорт для игрока.</p>
+        </div>
+        <div class="glass">
+            <h3>Оптимизация</h3>
+            <p>Уникальные пресеты под каждое железо. Мы выжмем каждый FPS, который может дать ваша система.</p>
+        </div>
+        <div class="glass">
+            <h3>PvP & PvE Помощь</h3>
+            <p>Встроенный функционал для получения игрового преимущества. Стань лучшим с Impact Visuals.</p>
+        </div>
+    </div>
+
+    <section class="gallery">
+        <h2 class="section-title">Галерея</h2>
+        <div class="grid">
+            <div class="img-placeholder">Скриншот: Главное меню</div>
+            <div class="img-placeholder">Скриншот: Менеджер модов</div>
+            <div class="img-placeholder">Скриншот: Глобальные настройки</div>
+        </div>
     </section>
+
+    <h2 class="section-title">Наши тарифы</h2>
+    <div class="pricing">
+        <div class="price-card"><h3>FREE</h3><p>0 ₽</p><button class="cta-button">В разработке</button></div>
+        <div class="price-card"><h3>MEDIUM</h3><p>50 ₽</p><button class="cta-button">Ожидается</button></div>
+        <div class="price-card"><h3>MAXIMUM</h3><p>150 ₽</p><button class="cta-button">Ожидается</button></div>
+    </div>
+
+    <footer>
+        <p>Impact Visuals © 2026. Проект в активной разработке.</p>
+        <p>Следите за обновлениями:</p>
+        <a href="https://t.me/ImpactVisualss" class="tg-link">Наш Telegram-канал</a>
+    </footer>
+
 </body>
 </html>
-

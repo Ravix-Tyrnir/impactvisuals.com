@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Impact Visuals | Launcher</title>
+    <style>
+        body { margin: 0; background-color: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; }
+        
+        /* Навигация */
+        .navbar { display: flex; align-items: center; padding: 20px 50px; background: #000; border-bottom: 2px solid #bd00ff; }
+        .logo { width: 45px; margin-right: 20px; filter: drop-shadow(0 0 5px #bd00ff); }
+        .tabs { display: flex; gap: 30px; margin-left: auto; }
+        .tab-btn { background: none; border: none; color: #aaa; cursor: pointer; padding: 10px; transition: 0.3s; font-size: 1.1rem; }
+        .tab-btn:hover, .tab-btn.active { color: #bd00ff; border-bottom: 2px solid #bd00ff; text-shadow: 0 0 10px #bd00ff; }
+
+        /* Контент */
+        .content-section { padding: 50px; display: none; text-align: center; }
+        .content-section.active { display: block; animation: fadeIn 0.6s ease; }
+        
+        .gallery { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+        .screenshot { width: 450px; border: 2px solid #bd00ff; border-radius: 15px; transition: 0.3s; cursor: pointer; }
+        .screenshot:hover { transform: scale(1.03); box-shadow: 0 0 25px #bd00ff; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <img src="logo.png" class="logo" alt="IV">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab(0)">Описание</button>
+        <button class="tab-btn" onclick="showTab(1)">Функции</button>
+        <button class="tab-btn" onclick="showTab(2)">Галерея</button>
+    </div>
+</nav>
+
+<div id="tab0" class="content-section active">
+    <h1>Impact Visuals</h1>
+    <p>Элитарный лаунчер для Minecraft. Максимальная производительность, современный дизайн.</p>
+</div>
+
+<div id="tab1" class="content-section">
+    <h1>Возможности</h1>
+    <p>• Глубокая оптимизация FPS<br>• Безопасный интерфейс<br>• Умная система профилей</p>
+</div>
+
+<div id="tab2" class="content-section">
+    <h1>Галерея</h1>
+    <div class="gallery">
+        <img src="main.png" class="screenshot" alt="Главное меню">
+        <img src="mods.png" class="screenshot" alt="Менеджер модов">
+        <img src="settings.png" class="screenshot" alt="Настройки">
+    </div>
+</div>
+
+<script>
+    function showTab(index) {
+        document.querySelectorAll('.content-section').forEach((s, i) => s.classList.toggle('active', i === index));
+        document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === index));
+    }
+</script>
+</body>
+</html>

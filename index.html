@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impact Visuals | Визуальный лаунчер</title>
+    <meta name="description" content="Impact Visuals — лучший визуальный лаунчер для Minecraft. Удобная оптимизация, PvP/PvE функции и стильный интерфейс. Скачивай сейчас!">
+    <meta name="keywords" content="Minecraft лаунчер, скачать лаунчер для майнкрафт, Impact Visuals, оптимизация майнкрафт, лаунчер для PvP">
+    <title>Impact Visuals — Визуальный лаунчер для Minecraft</title>
     <style>
         :root { --accent: #8a2be2; --bg: #050505; --glass: rgba(255, 255, 255, 0.05); }
         body { margin: 0; background-color: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; }
         
         header { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at center, #2e1a47 0%, #050505 70%); text-align: center; }
-        h1 { font-size: 5rem; margin: 0; text-shadow: 0 0 30px var(--accent); }
+        h1 { font-size: 4rem; margin: 0; text-shadow: 0 0 30px var(--accent); }
         
         .cta-button { padding: 20px 50px; background: var(--accent); border: none; border-radius: 30px; color: white; font-size: 1.2rem; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; margin-top: 20px; }
         .cta-button:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--accent); }
@@ -17,10 +19,14 @@
         .section-title { text-align: center; font-size: 3rem; margin: 80px 0; color: var(--accent); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 0 50px; }
         
-        .glass { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 30px; transition: 0.4s; }
+        /* Стили для скриншотов с увеличением */
+        .glass { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 30px; transition: 0.4s; cursor: pointer; }
         .glass:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .glass img { width: 100%; border-radius: 15px; margin-bottom: 15px; transition: 0.3s; }
-        .glass:hover img { transform: scale(1.03); }
+        .glass img { width: 100%; border-radius: 15px; transition: 0.3s; }
+        
+        /* Модальное окно (полный экран) */
+        #modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        #modal img { max-width: 90%; max-height: 90%; border-radius: 10px; }
 
         .pricing { display: flex; justify-content: center; gap: 30px; padding: 50px; flex-wrap: wrap; }
         .price-card { background: #111; padding: 40px; border-radius: 20px; text-align: center; border: 2px solid #333; width: 280px; }
@@ -32,32 +38,25 @@
 <body>
 
     <header>
-        <h1>IMPACT VISUALS</h1>
-        <p>Технологичность, скрытая в простоте.</p>
+        <h1>Impact Visuals</h1>
+        <p>Визуальный лаунчер для Minecraft нового поколения.</p>
         <a href="https://t.me/ImpactVisualss" target="_blank" class="cta-button">Скачать ALPHA 0.1</a>
     </header>
 
-    <h2 class="section-title">Галерея</h2>
+    <h2 class="section-title">Интерфейс</h2>
     <div class="grid">
-        <div class="glass">
-            <img src="Main.png" alt="Main">
-            <h3>Main</h3>
-        </div>
-        <div class="glass">
-            <img src="Mods.png" alt="Mods">
-            <h3>Mods</h3>
-        </div>
-        <div class="glass">
-            <img src="Setting.png" alt="Setting">
-            <h3>Setting</h3>
-        </div>
+        <div class="glass" onclick="openModal('Main.png')"><img src="Main.png" alt="Main"><h3 style="text-align:center;">Main</h3></div>
+        <div class="glass" onclick="openModal('Mods.png')"><img src="Mods.png" alt="Mods"><h3 style="text-align:center;">Mods</h3></div>
+        <div class="glass" onclick="openModal('Setting.png')"><img src="Setting.png" alt="Setting"><h3 style="text-align:center;">Setting</h3></div>
     </div>
+
+    <div id="modal" onclick="this.style.display='none'"><img id="modal-img"></div>
 
     <h2 class="section-title">Преимущества</h2>
     <div class="grid">
-        <div class="glass"><h3>Удобство</h3><p>Наш лаунчер — самый интуитивный на рынке. Мы убрали всё лишнее.</p></div>
-        <div class="glass"><h3>Оптимизация</h3><p>Уникальные пресеты под каждое железо. Максимальный FPS.</p></div>
-        <div class="glass"><h3>PvP & PvE Помощь</h3><p>Встроенные инструменты для комфортной игры и развития.</p></div>
+        <div class="glass"><h3>Удобство</h3><p>Самый интуитивный лаунчер: минимум действий, максимум комфорта.</p></div>
+        <div class="glass"><h3>Оптимизация</h3><p>Уникальные пресеты для слабых и мощных ПК. Стабильный FPS.</p></div>
+        <div class="glass"><h3>Функционал</h3><p>Специальные настройки для доминирования в PvP и развития в PvE.</p></div>
     </div>
 
     <h2 class="section-title">Тарифы</h2>
@@ -68,9 +67,15 @@
     </div>
 
     <footer>
-        <p>Impact Visuals © 2026. Проект в активной разработке.</p>
+        <p>Impact Visuals © 2026. Разработка идет полным ходом!</p>
         <a href="https://t.me/ImpactVisualss" target="_blank" class="tg-link">Наш Telegram-канал</a>
     </footer>
 
+    <script>
+        function openModal(src) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
